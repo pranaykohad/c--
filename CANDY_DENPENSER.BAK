@@ -1,0 +1,145 @@
+//CANDY DESPENSER
+
+#include<iostream.h>
+#include<conio.h>
+
+class disp{
+	int t_candies,t_chipes,t_gums,t_cookies;
+	int s_candies,s_chipes,s_gums,s_cookies;
+	int price_candies,price_chipes,price_gums,price_cookies;
+public:
+	disp();
+	void display();
+	void make_update();
+	void get_cost();
+	friend class cash_register;
+};
+
+
+
+class cash_register{
+	int c_candies,c_chipes,c_gums,c_cookies;
+	int total_amount;
+public:
+	void cal_amount(disp);
+	void display_bill(disp d);
+};
+
+disp :: disp(){
+	price_candies=50;
+	price_chipes=50;
+	price_gums=50;
+	price_cookies=50;
+}
+
+void disp :: display(){
+	t_candies=50;
+	t_chipes=50;
+	t_gums=50;
+	t_cookies=50;
+
+	cout<<"\n\t\t:::::welcome to candy seller::::::";
+	cout<<"\n\t\t\twe have follwing products:\n";
+	cout<<"\n\t\t\t\tcandies"<<"("<<price_candies<<" Rs)";
+	cout<<"\n\t\t\t\tchips"<<"("<<price_chipes<<" Rs)";
+	cout<<"\n\t\t\t\tgums"<<"("<<price_gums<<" Rs)";
+	cout<<"\n\t\t\t\tcookies"<<"("<<price_cookies<<" Rs)";
+
+	cout<<"\n\nenter the number of item that you want infront of names,if you don,t want that product then enter 0:\n";
+
+	cout<<"\ncandies: ";
+	cin>> s_candies;
+	cout<<"chips: ";
+	cin>> s_chipes;
+	cout<<"gums: ";
+	cin>> s_gums;
+	cout<<"cookies: ";
+	cin>>s_cookies;
+}
+
+void disp :: make_update(){
+	t_candies = t_candies - s_candies;
+	t_chipes  = t_chipes  - s_chipes;
+	t_gums    = t_gums    - s_gums;
+	t_candies = t_cookies - s_cookies;
+}
+
+void cash_register :: cal_amount(disp d){
+	c_candies=0;
+	c_chipes=0;
+	c_gums=0;
+	c_cookies=0;
+	total_amount=0;
+
+	c_candies   = d.price_candies * d.s_candies;
+	c_chipes    = d.price_chipes  * d.s_chipes;
+	c_gums      = d.price_gums    * d.s_gums;
+	c_cookies   = d.price_cookies * d.s_cookies;
+	total_amount= c_candies + c_chipes + c_gums + c_cookies;
+}
+
+void cash_register :: display_bill(disp d){
+	cout<<"\nbilling details: ";
+	cout<<"\nname     "<<"  "<<"price "<<"  "<<"cost";
+	cout<<"\ncandies: "<<"  "<<d.price_candies<<"       "<<c_candies;
+	cout<<"\nchipes : "<<"  "<<d.price_chipes <<"       "<<c_chipes;
+	cout<<"\ngums   : "<<"  "<<d.price_gums   <<"       "<<c_gums;
+	cout<<"\ncookies: "<<"  "<<d.price_cookies<<"       "<<c_cookies;
+	cout<<"\n-----------------------------";
+	cout<<"\namount :----------->"<<total_amount;
+}
+
+void main()
+{
+	clrscr();
+	disp d;
+	d.display();
+	d.make_update();
+	cash_register c;
+	c.cal_amount(d);
+	c.display_bill(d);
+
+	getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

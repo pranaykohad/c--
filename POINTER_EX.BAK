@@ -1,0 +1,62 @@
+#include<iostream.h>
+#include<conio.h>
+#include<stdio.h>
+
+void main()
+{
+	clrscr();
+
+	char a[]={'a','b','c','d','e'};
+	char *p1,*p2,*p3;
+
+	p1  = &a[0];
+	p2  = &a[1];
+	*p3 = a[2];
+
+	cout<<"char string: "<<puts(a);
+	cout<<"\np1: "<<p1<<"\n*p1: "<<*p1<<"\np2: "<<p2<<"\n*p2: "<<*p2<<"\np3: "<<p3<<"\n*p3: "<<*p3;
+
+	getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

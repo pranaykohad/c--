@@ -1,0 +1,89 @@
+//CONVERSION_ROUTINE
+
+#include<iostream.h>
+#include<conio.h>
+
+class Degree{
+
+public:
+		float deg;
+	Degree(){
+		deg=0.0;
+	}
+
+	void input(){
+		cout<<"\enter a degree:";
+		cin>>deg;
+	}
+
+};
+
+class Radian{
+	float rad;
+public:
+	 Radian(){
+		rad=0.0;
+	 }
+
+	 Radian(Degree d){
+		rad=(d.deg*(3.14/180));
+	 }
+
+	 void show(){
+		cout<<"\nradian: "<<rad;
+	 }
+
+};
+
+void main()
+{
+	clrscr();
+	Radian r;
+	Degree d;
+	d.input();
+	r=d;
+	r.show();
+	getch();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
